@@ -1,0 +1,110 @@
+
+<html>
+  <header>
+    <title>
+      Title
+    </title>
+    <link rel="stylesheet" href="mystyle.css">
+</header>
+<body>
+  <h1> Hello World! </h1>
+  <div>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+  </div>
+  <div>
+    <p id="dots"></p>
+    <button type="button" onclick="dotsFunction(3)">Show 3 dots</button> <button type="button" onclick="dotsFunction(6)">Show 6 dots</button>
+    </div>
+
+  <script src="myscript.js"></script> <h1 id="hello"> Hello world! </h1> <div>
+    <p> First paragraph </p>
+    <p> Second paragraph </p>
+    <button type="button" onclick="helloFunction('Ania')">Try it</button>
+    </div>
+    
+</body>
+
+
+<div>
+  <h3>Table</h3>
+  <table style="border: 1px solid black">
+        <tr>
+             <th>Imię</th>
+             <th>Nazwisko</th>
+             <th>Wiek</th>
+        </tr>
+        <tr>
+             <td>Tomasz</td>
+             <td>Kowalski</td>
+             <td>15</td>
+        </tr>
+        <tr>
+             <td>Marta</td>
+             <td>Kowalska</td>
+             <td>10</td>
+        </tr>
+  </table>
+</div>
+<title>Kalkulator</title>
+<meta charset="utf-8" />
+<style type="text/css">
+#calculator {
+    background: #eaeaea;
+    margin: 0 auto;
+    padding: 35px 25px 35px 25px;
+    width: 200px;
+    text-align: center;
+}
+#calculator button {
+    padding: 10px;
+    width: 40px;
+}
+#calculator input[type="text"] {
+    padding: 10px;
+    width: 147px;
+    margin-bottom: 5px;
+}
+</style>
+<script>
+function Calculator(operator) 
+{
+    var a = document.getElementById('a').value;
+    var b = document.getElementById('b').value;  
+ 
+    switch(operator) 
+    {
+        case '+':
+            var result = parseFloat(a) + parseFloat(b);         
+        break;
+        case '-':
+            var result = parseFloat(a) - parseFloat(b);         
+        break;  
+        case 'x':
+            var result = parseFloat(a) * parseFloat(b);         
+        break;  
+        case '/':
+            var result = parseFloat(a) / parseFloat(b);         
+        break;    
+    }
+ 
+    document.getElementById('result').value = '= ' + result;
+}
+</script>
+</head>
+<body>
+<form id="calculator">
+    <input type="text" id="a" placeholder="a" />
+    <input type="text" id="b" placeholder="b" />
+    <input type="text" id="result" placeholder="=" disabled="disabled" />
+    <button type="button" onclick="Calculator(this.innerHTML)">+</button> 
+    <button type="button" onclick="Calculator(this.innerHTML)">-</button>
+    <button type="button" onclick="Calculator(this.innerHTML)">x</button>   
+    <button type="button" onclick="Calculator(this.innerHTML)">/</button>
+</form>
+</body>
+
+
+
+</html>
+
