@@ -46,62 +46,91 @@
         </tr>
   </table>
 </div>
-<title>Kalkulator</title>
-<meta charset="utf-8" />
-<style type="text/css">
-#calculator {
-    background: #eaeaea;
-    margin: 0 auto;
-    padding: 35px 25px 35px 25px;
-    width: 200px;
-    text-align: center;
-}
-#calculator button {
-    padding: 10px;
-    width: 40px;
-}
-#calculator input[type="text"] {
-    padding: 10px;
-    width: 147px;
-    margin-bottom: 5px;
-}
-</style>
-<script>
-function Calculator(operator) 
-{
-    var a = document.getElementById('a').value;
-    var b = document.getElementById('b').value;  
- 
-    switch(operator) 
-    {
-        case '+':
-            var result = parseFloat(a) + parseFloat(b);         
-        break;
-        case '-':
-            var result = parseFloat(a) - parseFloat(b);         
-        break;  
-        case 'x':
-            var result = parseFloat(a) * parseFloat(b);         
-        break;  
-        case '/':
-            var result = parseFloat(a) / parseFloat(b);         
-        break;    
-    }
- 
-    document.getElementById('result').value = '= ' + result;
-}
-</script>
-</head>
 <body>
-<form id="calculator">
-    <input type="text" id="a" placeholder="a" />
-    <input type="text" id="b" placeholder="b" />
-    <input type="text" id="result" placeholder="=" disabled="disabled" />
-    <button type="button" onclick="Calculator(this.innerHTML)">+</button> 
-    <button type="button" onclick="Calculator(this.innerHTML)">-</button>
-    <button type="button" onclick="Calculator(this.innerHTML)">x</button>   
-    <button type="button" onclick="Calculator(this.innerHTML)">/</button>
-</form>
+<script> 
+  //function that display value 
+  function dis(val) 
+  { 
+      document.getElementById("result").value+=val 
+  } 
+    
+  //function that evaluates the digit and return result 
+  function solve() 
+  { 
+      let x = document.getElementById("result").value 
+      let y = eval(x) 
+      document.getElementById("result").value = y 
+  } 
+    
+  //function that clear the display 
+  function clr() 
+  { 
+      document.getElementById("result").value = "" 
+  } 
+</script> 
+<!-- for styling -->
+<style> 
+  .title{ 
+  margin-bottom: 10px; 
+  text-align:center; 
+  width: 210px; 
+  color:green; 
+  border: solid black 2px; 
+  } 
+
+  input[type="button"] 
+  { 
+  background-color:green; 
+  color: black; 
+  border: solid black 2px; 
+  width:100% 
+  } 
+
+  input[type="text"] 
+  { 
+  background-color:white; 
+  border: solid black 2px; 
+  width:100% 
+  } 
+</style> 
+</head> 
+<!-- create table -->
+<body> 
+<div class = title >GeeksforGeeks Calculator</div> 
+<table border="1"> 
+  <tr> 
+     <td colspan="3"><input type="text" id="result"/></td> 
+     <!-- clr() function will call clr to clear all value -->
+     <td><input type="button" value="c" onclick="clr()"/> </td> 
+  </tr> 
+  <tr> 
+     <!-- create button and assign value to each button -->
+     <!-- dis("1") will call function dis to display value -->
+     <td><input type="button" value="1" onclick="dis('1')"/> </td> 
+     <td><input type="button" value="2" onclick="dis('2')"/> </td> 
+     <td><input type="button" value="3" onclick="dis('3')"/> </td> 
+     <td><input type="button" value="/" onclick="dis('/')"/> </td> 
+  </tr> 
+  <tr> 
+     <td><input type="button" value="4" onclick="dis('4')"/> </td> 
+     <td><input type="button" value="5" onclick="dis('5')"/> </td> 
+     <td><input type="button" value="6" onclick="dis('6')"/> </td> 
+     <td><input type="button" value="-" onclick="dis('-')"/> </td> 
+  </tr> 
+  <tr> 
+     <td><input type="button" value="7" onclick="dis('7')"/> </td> 
+     <td><input type="button" value="8" onclick="dis('8')"/> </td> 
+     <td><input type="button" value="9" onclick="dis('9')"/> </td> 
+     <td><input type="button" value="+" onclick="dis('+')"/> </td> 
+  </tr> 
+  <tr> 
+     <td><input type="button" value="." onclick="dis('.')"/> </td> 
+     <td><input type="button" value="0" onclick="dis('0')"/> </td> 
+     <!-- solve function call function solve to evaluate value -->
+     <td><input type="button" value="=" onclick="solve()"/> </td> 
+     <td><input type="button" value="*" onclick="dis('*')"/> </td> 
+  </tr> 
+</table> 
 </body>
 
 
